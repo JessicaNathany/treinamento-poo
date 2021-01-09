@@ -1,4 +1,4 @@
-#  :computer: :blue_book: Treinamento POO Objetos - Carreira Única
+#  :computer: :yellow_book: Treinamento POO Objetos - Carreira Única
 
 ##### Este repositório é para fins didáticos para os alunos do curso Programação Orientado a Objetos (Carreira Única).
 
