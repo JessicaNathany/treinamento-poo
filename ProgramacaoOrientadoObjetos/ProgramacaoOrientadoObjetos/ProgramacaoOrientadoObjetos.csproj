@@ -5,11 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Herança\" />
-    <Folder Include="Classes e Ojetos\" />
-    <Folder Include="Encapsulamento\" />
-    <Folder Include="Polimorfismo\" />
-  </ItemGroup>
-
 </Project>
