@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProgramacaoOrientadoObjetos.Herança
 {
-    public class FuncionarioRepository : Repository
+    public class FuncionarioRepository : IRepository
     {
         // exemplo dois
     }

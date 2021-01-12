@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ProgramacaoOrientadoObjetos.Herança
 {
-    public interface Repository
+    public interface IRepository
     {
         public void Adicionar(Funcionario funcionario)
         {
