@@ -1,119 +1,57 @@
 ﻿using System;
-using ProgramacaoOrientadoObjetos.Classes_e_Ojetos.Model;
-using System.Collections.Generic;
 
 namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
 {
     public class ExemploClassesObjetos
     {
-        List<Professor> listaProfessores = new List<Professor>();
-        List<Aluno> listaAlunos = new List<Aluno>();
-        public List<Professor> BuscaProfessores()
+        public class Conta
         {
-            listaProfessores = new List<Professor>()
-            {
-                new Professor
-                {
-                    Id = 1,
-                    Nome = "Rodolfo",
-                    Especialidade = "Aplicações Web",
-                    NivelSuperior = "Pós-Graduado",
-                    Salario = 10000,
-                    Telefone = "962456699"
-                },
-
-                new Professor
-                {
-                    Id = 1,
-                    Nome = "Diego",
-                    Especialidade = "Machine Learning",
-                    NivelSuperior = "Mestrado",
-                    Salario = 10000,
-                    Telefone = "962456699"
-                },
-
-                new Professor
-                {
-                    Id = 1,
-                    Nome = "Carla",
-                    Especialidade = "UX",
-                    NivelSuperior = "Mestrado",
-                    Salario = 10000,
-                    Telefone = "962456699"
-                }
-            };
-
-            return listaProfessores;
+            public int Ag { get; set; }
+            public string Banco { get; set; }
+            public int NumeroConta { get; set; }
+            public double Saldo { get; set; }
         }
 
-        public List<Aluno> BuscaAlunos()
+        public class Cliente
         {
-            listaAlunos = new List<Aluno>()
-            {
-                new Aluno
-                {
-                    Id = 1,
-                    RA = "38826",
-                    Nome = "Maria",
-                    Curso = "Sistemas de Informação",
-                    Idade = 21,
-                    Semestre = "3º",
-                    Telefone = "00000000"
-                },
-
-                new Aluno
-                {
-                    Id = 1,
-                    RA = "38827",
-                    Nome = "Bruna",
-                    Curso = "Inteligência Artificial",
-                    Idade = 23,
-                    Semestre = "1º",
-                    Telefone = "00000000"
-                },
-
-                 new Aluno
-                {
-                    Id = 1,
-                    RA = "38826",
-                    Nome = "Carlos",
-                    Curso = "Ciência de Dados",
-                    Idade = 26,
-                    Semestre = "4º",
-                    Telefone = "00000000"
-                },
-            };
-
-            return listaAlunos;
+            public string Nome { get; set; }
+            public int Idade { get; set; }
+            public string Telefone { get; set; }
+            public string Email { get; set; }
         }
 
         public void Execucao()
         {
-            var listaProfessores = new List<Professor>();
-
-            Console.WriteLine("Selecione a busca que deseja fazer: ");
-            Console.WriteLine("");
-            Console.WriteLine("1 - Professores");
-            Console.WriteLine();
-            Console.WriteLine("2 - Alunos");
-            Console.WriteLine();
-
-            var opcao = Console.ReadKey();
-
-            // tentar com if e retornar a lista correspondente
-
-            switch (opcao.KeyChar)
+            var conta = new Conta()
             {
-                case '1':
-                    new ExemploClassesObjetos().BuscaProfessores();
-                    break;
+                Ag = 006,
+                Banco = "Banco dos Devs",
+                NumeroConta = 123,
+                Saldo = 10000
+            };
 
-                case '2':
-                    new ExemploClassesObjetos().BuscaAlunos();
-                    break;
-            }
-            
-            Console.WriteLine(listaProfessores);
+            var cliente = new Cliente()
+            {
+                Nome = "Jéssica Nathany",
+                Idade = 30,
+                Email = "jessicanathany.web@gmail.com",
+                Telefone = "55+(11)999999"
+            };
+
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Dados Bancários");
+            Console.WriteLine();
+            Console.WriteLine($"Banco: {conta.Banco}" + "\n" + $"Agência: {conta.Ag}" + "\n" +  $"Número da conta: {conta.NumeroConta}" + "\n" + $"Saldo da conta: {conta.Saldo}");
+            Console.WriteLine();
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Dados do Cliente");
+            Console.WriteLine();
+            Console.WriteLine($"Nome: {cliente.Nome}" + "\n" + $"Idade: {cliente.Idade}" + "\n" + $"Email: {cliente.Email}" + "\n" + $"Telefone: {cliente.Telefone}");
+            Console.ReadKey();
+            Console.WriteLine("------------------------------------");
+            Console.ReadKey();
         }
     }
 }

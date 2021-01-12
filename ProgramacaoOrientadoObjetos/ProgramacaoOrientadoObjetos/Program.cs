@@ -11,8 +11,9 @@ namespace ProgramacaoOrientadoObjetos
         static void Main()
         {
             Console.WriteLine(" ..:: Selecione uma opção ::..");
-            Console.WriteLine("");
-            Console.WriteLine("1 - Classes e Objetos");
+            Console.WriteLine();
+            Console.WriteLine("0 - Classes e Objetos");
+            Console.WriteLine("1 - Métodos");
             Console.WriteLine("2 - Encapsulamento");
             Console.WriteLine("3 - Herança - Interface e Implementação");
             Console.WriteLine("4 - Polimorfismo");
@@ -21,8 +22,12 @@ namespace ProgramacaoOrientadoObjetos
 
             switch(opcao.KeyChar)
             {
+                case '0':
+                    new ExemploClassesObjetos().Execucao();
+                    break;
+
                 case '1':
-                    new ExemploClassesObjetos().Execucao(); 
+                    new Metodos().Execucao();
                     break;
 
                 case '2':
