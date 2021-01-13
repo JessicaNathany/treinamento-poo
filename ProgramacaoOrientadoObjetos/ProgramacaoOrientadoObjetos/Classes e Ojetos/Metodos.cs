@@ -6,20 +6,21 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
         public void Execucao()
         {
             /* Depósito */
-            Console.WriteLine();
-            Console.WriteLine("Digite seu nome: " + "\n");
-            var nome = Console.ReadLine();
-            Console.WriteLine("Informe um valor para depósito: " + "\n");
-
-            /* Saque */
             //Console.WriteLine();
             //Console.WriteLine("Digite seu nome: " + "\n");
             //var nome = Console.ReadLine();
-            //Console.WriteLine("Informe um valor para saque: " + "\n");
+            //Console.WriteLine("Informe um valor para depósito: " + "\n");
 
-            var valor = Console.ReadLine();
+            /* Saque */
+            Console.WriteLine();
+            Console.WriteLine("Digite seu nome: " + "\n");
+            var nome = Console.ReadLine();
+            Console.WriteLine("Informe um valor para saque: " + "\n");
 
-            var valorConvert = Convert.ToDouble(valor);
+            //var valor = Console.ReadLine();
+
+            
+            var valor = Convert.ToDouble(Console.ReadLine()); 
 
             var conta = new ContaCorrente()
             {
@@ -29,32 +30,32 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
                 Saldo = 1000
             };
 
-            var deposito = conta.Depositar(valorConvert);
-            //var saque = conta.Sacar(valorConvert);
+            //var deposito = conta.Depositar(valorConvert);
+            var saque = conta.Sacar(valor);
 
-           // Imprime as informações da conta do cliente(DEPÓSITO)
-
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine();
-            Console.WriteLine("Dados da conta do cliente");
-            Console.WriteLine();
-            Console.WriteLine($"Olá {nome}," + "\n" + "seu depósito foi realizado com sucesso!" + "\n" + $"Valor depositado: {valor}" + "\n");
-            Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {deposito}");
-            Console.ReadKey();
-            Console.WriteLine("------------------------------------");
-            Console.ReadKey();
-
-            /* CImprime as informações da conta do cliente (SAQUE)*/
+            // Imprime as informações da conta do cliente(DEPÓSITO)
 
             //Console.WriteLine("------------------------------------");
             //Console.WriteLine();
             //Console.WriteLine("Dados da conta do cliente");
             //Console.WriteLine();
-            //Console.WriteLine($"Olá {nome}," + "\n" + "seu saque foi realizado com sucesso!" + "\n" + $"Valor sacado: {valor}" + "\n");
-            //Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {saque}");
+            //Console.WriteLine($"Olá {nome}," + "\n" + "seu depósito foi realizado com sucesso!" + "\n" + $"Valor depositado: {valor}" + "\n");
+            //Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {deposito}");
             //Console.ReadKey();
             //Console.WriteLine("------------------------------------");
             //Console.ReadKey();
+
+            /* Imprime as informações da conta do cliente (SAQUE)*/
+
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Dados da conta do cliente");
+            Console.WriteLine();
+            Console.WriteLine($"Olá {nome}," + "\n" + "seu saque foi realizado com sucesso!" + "\n" + $"Valor sacado: {valor}" + "\n");
+            Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {saque}");
+            Console.ReadKey();
+            Console.WriteLine("------------------------------------");
+            Console.ReadKey();
         }
     }
 
