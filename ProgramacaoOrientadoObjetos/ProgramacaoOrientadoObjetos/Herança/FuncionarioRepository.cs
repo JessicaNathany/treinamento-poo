@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ProgramacaoOrientadoObjetos.Herança
 {
-    public class FuncionarioRepository : IRepository
+    public class FuncionarioRepository : IFuncionarioRepository
     {
-        // exemplo dois
-    }
+        public List<Funcionario> ListarFuncionarios()
+        {
+            throw new NotImplementedException();
+        }
 
-   
+        public void Save(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(int id)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

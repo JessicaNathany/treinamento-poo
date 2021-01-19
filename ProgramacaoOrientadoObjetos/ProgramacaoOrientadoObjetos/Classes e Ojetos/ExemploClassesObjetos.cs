@@ -42,14 +42,18 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
             Console.WriteLine();
             Console.WriteLine("Dados Bancários");
             Console.WriteLine();
-            Console.WriteLine($"Banco: {conta.Banco}" + "\n" + $"Agência: {conta.Ag}" + "\n" +  $"Número da conta: {conta.NumeroConta}" + "\n" + $"Saldo da conta: {conta.Saldo}");
-            Console.WriteLine();
+            Console.WriteLine($"Banco: {conta.Banco}");
+            Console.WriteLine($"Agencia: {conta.Ag}");
+            Console.WriteLine($"Número da conta: {conta.NumeroConta}");
+            Console.WriteLine($"Saldo da conta: {conta.Saldo}");
             Console.WriteLine("------------------------------------");
             Console.WriteLine();
             Console.WriteLine("Dados do Cliente");
             Console.WriteLine();
-            Console.WriteLine($"Nome: {cliente.Nome}" + "\n" + $"Idade: {cliente.Idade}" + "\n" + $"Email: {cliente.Email}" + "\n" + $"Telefone: {cliente.Telefone}");
-            Console.ReadKey();
+            Console.WriteLine($"Nome: {cliente.Nome}");
+            Console.WriteLine($"Idade: {cliente.Idade}");
+            Console.WriteLine($"Email: {cliente.Email}");
+            Console.WriteLine($"Telefone: {cliente.Telefone}");
             Console.WriteLine("------------------------------------");
             Console.ReadKey();
         }
