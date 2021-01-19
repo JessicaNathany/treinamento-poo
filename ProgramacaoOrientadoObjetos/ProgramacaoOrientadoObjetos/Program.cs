@@ -17,6 +17,7 @@ namespace ProgramacaoOrientadoObjetos
             Console.WriteLine("2 - Encapsulamento");
             Console.WriteLine("3 - Herança - Interface e Implementação");
             Console.WriteLine("4 - Polimorfismo");
+            Console.WriteLine("5 - Abstração");
 
             var opcao = Console.ReadKey();
 
@@ -40,6 +41,10 @@ namespace ProgramacaoOrientadoObjetos
 
                 case '4':
                     new ExemploPolimorfismo().Execucao();
+                    break;
+
+                case '5':
+                    new Abstracao().Execucao();
                     break;
             }
         }
