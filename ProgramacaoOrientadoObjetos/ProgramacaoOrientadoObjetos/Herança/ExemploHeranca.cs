@@ -7,22 +7,26 @@ namespace ProgramacaoOrientadoObjetos.Herança
        
         public void Execucao()
         {
-             /* Exemplo 1 Herança */
+            // Herança
+            var funcionario = new Funcionario()
+            {
+                Nome = "João da Silva",
+                DataNascimento = Convert.ToDateTime("1990/01/01"),
+                DataAdmissao = DateTime.Now,
+                Registro = "0123456",
+            };
 
-            //var funcionario = new Funcionario()
-            //{
-            //    Nome = "João da Silva",
-            //    DataNascimento = Convert.ToDateTime("1990/01/01"),
-            //    DataAdmissao = DateTime.Now,
-            //    Registro = "0123456",
-            //};
+            // Abstração
 
-            //Console.WriteLine();
-            //Console.WriteLine("..::Relatório Funcionário::.. " + "\n");
-            //Console.WriteLine($"Nome do funcionário: {funcionario.Nome}");
-            //Console.WriteLine($"Data de nascimento: {funcionario.DataNascimento}");
-            //Console.WriteLine($"Data de admissão: {funcionario.DataAdmissao}");
-            //Console.WriteLine($"Registro: {funcionario.Registro}");
+            var idade = funcionario.CalcularIdade();
+
+            Console.WriteLine();
+            Console.WriteLine("..::Relatório Funcionário::.. " + "\n");
+            Console.WriteLine($"Nome do funcionário: {funcionario.Nome}");
+            Console.WriteLine($"Idade do funcionário: {idade}");
+            Console.WriteLine($"Data de nascimento: {funcionario.DataNascimento}");
+            Console.WriteLine($"Data de admissão: {funcionario.DataAdmissao}");
+            Console.WriteLine($"Registro: {funcionario.Registro}");
         }
     }
 
