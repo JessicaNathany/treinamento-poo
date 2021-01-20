@@ -1,7 +1,4 @@
 ﻿using ProgramacaoOrientadoObjetos.Classes_e_Ojetos;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProgramacaoOrientadoObjetos.Herança
 {
@@ -10,6 +7,5 @@ namespace ProgramacaoOrientadoObjetos.Herança
         void FecharPedido(int id);
         Pedido DetalhesPedido(int id);
         void Salvar(Pedido pedido);
-
     }
 }
