@@ -14,6 +14,10 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
 
         }
 
+        private static void ObterModeloAndroid() { }
+
+        private static void ObterModeloIOS() { }
+
         public override void Desligar()
         {
             throw new NotImplementedException();
@@ -22,6 +26,12 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
         public override void Ligar()
         {
             throw new NotImplementedException();
+        }
+
+        public void ObtemSmartphone()
+        {
+            ObterModeloAndroid();
+            ObterModeloIOS();
         }
     }
 }

@@ -16,7 +16,7 @@
 
         public virtual void Testar()
         {
-            // teste do celular
+            // teste do equipamento
         }
     }
 }

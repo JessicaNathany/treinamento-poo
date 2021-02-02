@@ -15,6 +15,7 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
             smarthphone.Ligar();
             smarthphone.Desligar();
             smarthphone.Testar();
+            smarthphone.ObtemSmartphone();
         }
     }
 }
