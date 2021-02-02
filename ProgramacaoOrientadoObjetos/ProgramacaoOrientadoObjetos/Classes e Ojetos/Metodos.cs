@@ -61,10 +61,10 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
 
     public class ContaCorrente
     {
-        public string Titular;
-        public int Agencia;
-        public int Numero;
-        public double Saldo;
+        public string Titular { get; set; }
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
+        public double Saldo { get; set; }
 
         public double Sacar(double valor)
         {

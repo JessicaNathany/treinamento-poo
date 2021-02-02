@@ -30,15 +30,15 @@ namespace ProgramacaoOrientadoObjetos.Herança
             Console.ReadKey();
         }
 
-        public abstract class ContaCorrente
+        public abstract class Eletrodomestico
         {
-            private readonly double _valor;
-            private readonly string _saldo;
+            private readonly string _voltagem;
+            private readonly bool _ligar;
 
-            public ContaCorrente(double valor, string saldo)
+            public Eletrodomestico(bool ligar, string voltagem)
             {
-                _valor = valor;
-                _saldo = saldo;
+                _voltagem = voltagem;
+                _ligar = ligar;
             }
 
             public abstract void Sacar();

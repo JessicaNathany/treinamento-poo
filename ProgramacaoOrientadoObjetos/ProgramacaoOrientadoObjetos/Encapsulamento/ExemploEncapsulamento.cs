@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProgramacaoOrientadoObjetos.Encapsulamento
 {
@@ -8,7 +6,15 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
     {
         public void Execucao()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Exemplo do encapsulamento.");
+        }
+
+        public void ServirCafe()
+        {
+            var smarthphone = new Smarthphone();
+            smarthphone.Ligar();
+            smarthphone.Desligar();
+            smarthphone.Testar();
         }
     }
 }
