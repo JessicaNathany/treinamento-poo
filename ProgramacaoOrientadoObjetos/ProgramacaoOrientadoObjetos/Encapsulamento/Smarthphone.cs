@@ -2,16 +2,14 @@
 
 namespace ProgramacaoOrientadoObjetos.Encapsulamento
 {
-    public class Smarthphone : Eletronico
+    public class Smarthphone: Eletronico
     {
-        public Smarthphone(string nome, string marca) : base(nome, marca)
+        public Smarthphone(string nome, string marca, string tipo) : base(nome, marca, tipo)
         {
-
         }
 
-        public Smarthphone() : base("Galaxy", "Sangung")
+        public Smarthphone() : base("GALAXY", "Sangung", "celular")
         {
-
         }
 
         private static void ObterModeloAndroid() { }
