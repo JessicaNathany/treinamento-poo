@@ -22,4 +22,7 @@
             // teste do equipamento
         }
     }
+
+   
+
 }

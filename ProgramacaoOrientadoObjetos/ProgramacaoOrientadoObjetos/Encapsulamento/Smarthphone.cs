@@ -10,6 +10,7 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
 
         public Smarthphone() : base("GALAXY", "Sangung", "celular")
         {
+
         }
 
         private static void ObterModeloAndroid() { }
@@ -31,5 +32,23 @@ namespace ProgramacaoOrientadoObjetos.Encapsulamento
             ObterModeloAndroid();
             ObterModeloIOS();
         }
+
+        public class EncapsulandoDados
+        {
+            private int Login { get; set; }
+            public string Nome { get; set; }
+            public decimal Senha { get; private set; }
+        }
+
+        public class TestandoEncapsulamento
+        {
+            EncapsulandoDados dados = new EncapsulandoDados()
+            {
+                Nome = "Jéh",
+            };
+            
+
+        }
+
     }
 }
