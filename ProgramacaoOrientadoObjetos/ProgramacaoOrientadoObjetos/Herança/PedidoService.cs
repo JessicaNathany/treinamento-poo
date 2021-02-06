@@ -6,17 +6,22 @@ namespace ProgramacaoOrientadoObjetos.Herança
 {
     public class PedidoService : IPedidoService
     {
+        public void AlterarStatusPedido(int idPedido, int idStatus)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CancelarPedido(Pedido pedido)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Pedido DetalhesPedido(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void FecharPedido(int id)
+        public void FecharPedido(int idPedido)
         {
             throw new NotImplementedException();
         }
@@ -26,7 +31,7 @@ namespace ProgramacaoOrientadoObjetos.Herança
             throw new NotImplementedException();
         }
 
-        public void Salvar(Pedido pedido)
+        public void Salvar(Pedido entity)
         {
             throw new NotImplementedException();
         }

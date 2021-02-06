@@ -5,22 +5,46 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
     {
         public void Execucao()
         {
-            /* Depósito */
-            //Console.WriteLine();
-            //Console.WriteLine("Digite seu nome: " + "\n");
-            //var nome = Console.ReadLine();
-            //Console.WriteLine("Informe um valor para depósito: " + "\n");
+            Console.WriteLine(" ..:: Selecione uma opção ::..");
+            Console.WriteLine();
+            Console.WriteLine("1 - Sacar");
+            Console.WriteLine("2 - Depositar");
+            Console.WriteLine("3 - Transferir");
 
-            /* Saque */
+            var opcao = Console.ReadKey();
+
+            switch (opcao.KeyChar)
+            {
+                case '1':
+                    new ContaCorrente().OpcaoSacar();
+                    break;
+
+                case '2':
+                    new ContaCorrente().OpcaoDepositar();
+                    break;
+
+                case '3':
+                    new ContaCorrente().OpcaoTransferir();
+                    break;
+            }
+        }
+    }
+
+    public class ContaCorrente
+    {
+        public string Titular { get; set; }
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
+        public double Saldo { get; set; }
+
+        public void OpcaoSacar()
+        {
             Console.WriteLine();
             Console.WriteLine("Digite seu nome: " + "\n");
             var nome = Console.ReadLine();
             Console.WriteLine("Informe um valor para saque: " + "\n");
 
-            //var valor = Console.ReadLine();
-
-            
-            var valor = Convert.ToDouble(Console.ReadLine()); 
+            var valor = Convert.ToDouble(Console.ReadLine());
 
             var conta = new ContaCorrente()
             {
@@ -30,22 +54,7 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
                 Saldo = 1000
             };
 
-            //var deposito = conta.Depositar(valorConvert);
             var saque = conta.Sacar(valor);
-
-            // Imprime as informações da conta do cliente(DEPÓSITO)
-
-            //Console.WriteLine("------------------------------------");
-            //Console.WriteLine();
-            //Console.WriteLine("Dados da conta do cliente");
-            //Console.WriteLine();
-            //Console.WriteLine($"Olá {nome}," + "\n" + "seu depósito foi realizado com sucesso!" + "\n" + $"Valor depositado: {valor}" + "\n");
-            //Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {deposito}");
-            //Console.ReadKey();
-            //Console.WriteLine("------------------------------------");
-            //Console.ReadKey();
-
-            /* Imprime as informações da conta do cliente (SAQUE)*/
 
             Console.WriteLine("------------------------------------");
             Console.WriteLine();
@@ -57,46 +66,99 @@ namespace ProgramacaoOrientadoObjetos.Classes_e_Ojetos
             Console.WriteLine("------------------------------------");
             Console.ReadKey();
         }
-    }
 
-    public class ContaCorrente
-    {
-        public string Titular { get; set; }
-        public int Agencia { get; set; }
-        public int Numero { get; set; }
-        public double Saldo { get; set; }
+        public void OpcaoDepositar()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Digite seu nome: " + "\n");
+            var nome = Console.ReadLine();
+            Console.WriteLine("Informe um valor para depósito: " + "\n");
+            var valor = Convert.ToDouble(Console.ReadLine());
 
-        public double Sacar(double valor)
+            var conta = new ContaCorrente()
+            {
+                Agencia = 123,
+                Titular = "Jéssica",
+                Numero = 8792,
+                Saldo = 1000
+            };
+
+            var deposito = conta.Depositar(valor);
+
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Dados da conta do cliente");
+            Console.WriteLine();
+            Console.WriteLine($"Olá {nome}," + "\n" + "seu depósito foi realizado com sucesso!" + "\n" + $"Valor depositado: {valor}" + "\n");
+            Console.WriteLine($"Agencia: {conta.Agencia}" + "\n" + $"Numero: {conta.Numero}" + "\n" + $"Saldo: {deposito}");
+            Console.ReadKey();
+            Console.WriteLine("------------------------------------");
+            Console.ReadKey();
+        }
+
+        public void OpcaoTransferir()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Digite seu nome: " + "\n");
+            var nome = Console.ReadLine();
+
+            Console.WriteLine("Informe o número da Agencia: " + "\n");
+            var agenciaDestino = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Informe o número da Conta: " + "\n");
+            var contaDestino = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Informe o valor para transferência: " + "\n");
+            var valor = Convert.ToDouble(Console.ReadLine());
+
+            var conta = new ContaCorrente()
+            {
+                Agencia = 123,
+                Titular = "Jéssica",
+                Numero = 8792,
+                Saldo = 1000
+            };
+
+            var transferir = conta.Transferir(valor, agenciaDestino, contaDestino);
+
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Dados da conta do cliente");
+            Console.WriteLine();
+            Console.WriteLine($"Olá, {nome}");
+            Console.WriteLine($"Transferência realizada com sucesso! Seu saldo é de: {conta.Saldo}");
+            Console.WriteLine($"Agencia: {contaDestino}" + "\n" + $"Numero: {agenciaDestino}" + "\n" + $"Saldo: {transferir}");
+            Console.ReadKey();
+            Console.WriteLine("------------------------------------");
+            Console.ReadKey();
+        }
+
+        private double Sacar(double valor)
         {
             if (Saldo < valor)
             {
-                Console.WriteLine($"Não foi possível concluir a transação. Seu saldo {Saldo} é inferior ao valor do saque {valor}."); 
-            }
-            else
-            {
-                Saldo -= valor;
+                Console.WriteLine($"Não foi possível concluir a transação. Seu saldo {Saldo} é inferior ao valor do saque {valor}.");
                 return Saldo;
             }
 
+            Saldo -= valor;
             return Saldo;
         }
-
-        public double Depositar(double valor)
+        private double Depositar(double valor)
         {
             Saldo += valor;
 
             return Saldo;
         }
-        public bool Transferir(double valor, ContaCorrente contaDestino)
+        private bool Transferir(double valor, int agencia, int conta)
         {
             if (Saldo < valor)
             {
                 Console.WriteLine($"Não foi possível concluir a transação. Seu saldo {Saldo} é inferior ao valor que deseja transferir. {Saldo}");
+                return false;
             }
 
             Saldo -= valor;
-            contaDestino.Depositar(valor);
-            Console.WriteLine($"Transferência realizada com sucesso! Seu saldo é de: {Saldo}");
             return true;
         }
     }
